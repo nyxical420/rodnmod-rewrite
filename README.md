@@ -1,18 +1,18 @@
 <p align="center">
-    <img src="https://github.com/nyxical420/rodnmod/blob/main/assets/repository/banner.png?raw=true" width="800"/><br>
+    <img src="https://github.com/nyxical420/rodnmod-rewrite/blob/main/assets/repository/banner.png?raw=true" width="800"/><br>
     A webfishing-themed mod manager!
 </p>
 
 <p align="center">
-    <img src="https://github.com/nyxical420/rodnmod/blob/main/assets/repository/divisor.png?raw=true" width="600"/><br>
+    <img src="https://github.com/nyxical420/rodnmod-rewrite/blob/main/assets/repository/divisor.png?raw=true" width="600"/><br>
 </p>
 
 <p align="center">
-  <a href="https://github.com/nyxical420/rodnmod/releases/latest" style="pointer-events: none;">
-    <img src="https://github.com/nyxical420/rodnmod/blob/main/assets/repository/download.png?raw=true" width="auto" />
+  <a href="https://github.com/nyxical420/rodnmod-rewrite/releases/latest" style="pointer-events: none;">
+    <img src="https://github.com/nyxical420/rodnmod-rewrite/blob/main/assets/repository/download.png?raw=true" width="auto" />
   </a>
   <a href="https://ko-fi.com/nyxical" style="pointer-events: none;">
-    <img src="https://github.com/nyxical420/rodnmod/blob/main/assets/repository/support.png?raw=true" width="auto" />
+    <img src="https://github.com/nyxical420/rodnmod-rewrite/blob/main/assets/repository/support.png?raw=true" width="auto" />
   </a>
 </p>
 
@@ -25,12 +25,12 @@
 
 <br>
 <p align="center">
-    <img src="https://github.com/nyxical420/rodnmod/blob/main/assets/repository/credits.png?raw=true" width="600"/><br>
+    <img src="https://github.com/nyxical420/rodnmod-rewrite/blob/main/assets/repository/credits.png?raw=true" width="600"/><br>
 </p>
 
 - @Zoiudolo for Rod n' Mod assets
 - west for Game Sounds and Cursor used in Rod n' Mod
 
 <p align="center">
-    <img src="https://github.com/nyxical420/rodnmod/blob/main/assets/repository/enddivisor.png?raw=true" width="600"/><br>
+    <img src="https://github.com/nyxical420/rodnmod-rewrite/blob/main/assets/repository/enddivisor.png?raw=true" width="600"/><br>
 </p>

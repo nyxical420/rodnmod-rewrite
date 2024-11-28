@@ -1,15 +1,12 @@
 {
   "name": "rodnmod-rewrite",
-  "version": "1.0.0-alpba",
-  "description": "A webfishing-themed mod manager!",
-  "main": "main.js",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
   "scripts": {
-    "start": "electron ."
+    "tauri": "tauri"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "electron": "^33.2.0"
+    "@tauri-apps/cli": "^2"
   }
 }

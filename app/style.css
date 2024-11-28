@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "AccidentalPresidency";
+    src: url('./font.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url('../assets/web/fishing/cursor.png'), auto;
+}
+
+body {
+    font-family: "AccidentalPresidency", sans-serif;
+    background-color: #e9b26b;
+}

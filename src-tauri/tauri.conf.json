@@ -10,9 +10,14 @@
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "rodnmod-rewrite",
-        "width": 800,
-        "height": 600
+        "title": "Rod n' Mod",
+        "decorations": false,
+        "transparent": true,
+        "fullscreen": false,
+        "width": 1300,
+        "height": 800,
+        "resizable": false,
+        "maximized": false
       }
     ],
     "security": {

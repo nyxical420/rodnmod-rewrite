@@ -7,10 +7,74 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "AccidentalPresidency", sans-serif;
     cursor: url('../assets/web/fishing/cursor.png'), auto;
 }
 
-body {
-    font-family: "AccidentalPresidency", sans-serif;
-    background-color: #e9b26b;
+html, body {
+    height: 100vh;
+    width: 100vw;
+}
+
+img {
+    image-rendering: pixelated;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.closeButton {
+    border: none;
+    background-color: #ff4545;
+    color: #ffeed5;
+    border-radius: 7px;
+    position: fixed;
+    right: 10px;
+    top: 7px;
+    width: 34px;
+    height: 34px;
+    font-size: 25px;
+    box-shadow: 0 4px 0 #7d2121;
+    cursor: url('/assets/web/point.png'), pointer;
+}
+
+.closeButton:hover {
+    background-color: #da3b3b;
+}
+
+.closeButton:active {
+    box-shadow: 0 -4px 0 #7d2121;
+    top: 10px;
+    cursor: url('/assets/web/click.png'), pointer;
+}
+
+.minimizeButton {
+    border: none;
+    background-color: #45aaff;
+    color: #ffeed5;
+    border-radius: 7px;
+    position: fixed;
+    right: 50px;
+    top: 7px;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    box-shadow: 0 4px 0 #327dbb;
+    cursor: url('/assets/web/point.png'), pointer;
+}
+
+.minimizeButton:hover {
+    background-color: #409ce8;
+}
+
+.minimizeButton:active {
+    box-shadow: 0 -4px 0 #286495;
+    top: 10px;
+    cursor: url('/assets/web/click.png'), pointer;
 }

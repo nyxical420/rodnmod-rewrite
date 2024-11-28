@@ -17,7 +17,7 @@
 </p>
 
 > [!NOTE]
-> Assets located in `assets/web/fishing` are WEBFISHING game assets and is excepted from the project's license.
+> Assets located in `src/assets/web/fishing` are WEBFISHING game assets and is excepted from the project's license.
 
 > [!NOTE]
 > Rod n' Mod is currently being rewritten as of November 26. 2024.

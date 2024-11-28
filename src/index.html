@@ -8,6 +8,57 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        Test lol
+        <style>
+            .splashScreen {
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                width: 100vw;
+                height: 100vh;
+                color: #ffeed5;
+                background-color: #101c31;
+
+                transition: 500ms;
+                z-index: 0;
+            }
+
+            .titleBar {
+                -webkit-app-region: drag;
+                -moz-app-region: drag;
+                app-region: drag;
+                
+                display: flex;
+                flex-direction: row;
+
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                width: 100vw;
+                height: 28px;
+                color: #ffeed5;
+                background-color: #101c31;
+
+                pointer-events: none;
+            }
+        </style>
+
+        <!-- Splash Screen -->
+        <div class="splashScreen">
+            <img src="assets/web/banner.png" width="650" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        
+            <div style="display: flex; flex-direction: row; position: fixed; left: 0; bottom: 0; height: 60px; width: 100vw; padding: 5px; font-size: 20px;">
+                <div style="margin-left: 0; display: flex; gap: 5px;">
+                    <img src="assets/web/loading.png" height="30" style="margin: 13px auto; animation: loading 2s linear infinite;">
+                    <text style="margin: auto 0 11px 0;">Loading...</text>
+                </div>
+
+                <div style="margin-left: auto; display: flex;">
+                    <text style="margin: auto 0 11px 0;">Powered by GDWeave</text>
+                    <img src="/assets/web/gdweave.png" height="50">
+                </div>
+            </div>
+        </div>
     </body>
 </html>

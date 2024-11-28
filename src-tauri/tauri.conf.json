@@ -12,16 +12,27 @@
       {
         "title": "Rod n' Mod",
         "decorations": false,
-        "transparent": true,
-        "fullscreen": false,
         "width": 1300,
         "height": 800,
-        "resizable": false,
-        "maximized": false
+        "closable": false,
+        "maximizable": false,
+        "minimizable": false,
+        "resizable": false
       }
     ],
     "security": {
-      "csp": null
+      "csp": null,
+      "capabilities": [
+        {
+          "identifier": "draggable-window",
+          "windows": [
+            "*"
+          ],
+          "permissions": [
+            "core:window:allow-start-dragging"
+          ]
+        }
+      ]
     }
   },
   "bundle": {

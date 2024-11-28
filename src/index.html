@@ -21,17 +21,15 @@
 
                 transition: 500ms;
                 z-index: 0;
+
+                pointer-events: none;
             }
 
             .titleBar {
-                -webkit-app-region: drag;
-                -moz-app-region: drag;
-                app-region: drag;
-                
                 display: flex;
                 flex-direction: row;
 
-                position: fixed;
+                position: absolute;
                 top: 0;
                 left: 0;
 
@@ -40,7 +38,7 @@
                 color: #ffeed5;
                 background-color: #101c31;
 
-                pointer-events: none;
+                cursor: url('assets/web/fishing/cursor.png'), auto;
             }
         </style>
 
@@ -48,9 +46,9 @@
         <div class="splashScreen">
             <img src="assets/web/banner.png" width="650" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
         
-            <div style="display: flex; flex-direction: row; position: fixed; left: 0; bottom: 0; height: 60px; width: 100vw; padding: 5px; font-size: 20px;">
+            <div style="display: flex; flex-direction: row; position: fixed; left: 0; bottom: 0; height: 60px; width: calc(100vw - 20px); padding: 5px; font-size: 20px; margin: auto 10px 5px 10px;">
                 <div style="margin-left: 0; display: flex; gap: 5px;">
-                    <img src="assets/web/loading.png" height="30" style="margin: 13px auto; animation: loading 2s linear infinite;">
+                    <img src="assets/web/loading.png" height="35" style="margin: 11px auto; animation: loading 2s linear infinite;">
                     <text style="margin: auto 0 11px 0;">Loading...</text>
                 </div>
 
@@ -59,6 +57,29 @@
                     <img src="/assets/web/gdweave.png" height="50">
                 </div>
             </div>
+        </div>
+
+        <!-- Title Bar -->
+        <div data-tauri-drag-region class="titleBar">
+            <img src="assets/rodnmod.ico" style="padding: 4px; image-rendering: auto;">
+
+            <text style="font-size: 18px; margin: 2px 0;">
+                Rod n' Mod
+            </text>
+        </div>
+        <div style="z-index: 1;">
+            <button class="minimizeButton" style="font-size: 22px;">
+                _
+            </button>
+    
+            <button class="closeButton" style="font-size: 30px;">
+                X
+            </button>
+        </div>
+
+        <!-- Window Content -->
+        <div class="windowContent">
+
         </div>
     </body>
 </html>

@@ -6,6 +6,7 @@
 * {
     margin: 0;
     padding: 0;
+    user-select: none;
     box-sizing: border-box;
     font-family: "AccidentalPresidency", sans-serif;
     cursor: url('../assets/web/fishing/cursor.png'), auto;
@@ -17,6 +18,11 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: auto;
+}
+
+body {
+    color: #ffeed5;
+    background-color: #101c31;
 }
 
 img {
@@ -32,52 +38,202 @@ img {
     }
 }
 
-.closeButton {
-    border: none;
-    background-color: #ff4545;
-    color: #ffeed5;
-    border-radius: 7px;
-    position: fixed;
-    right: 10px;
-    top: 7px;
-    width: 34px;
-    height: 34px;
-    font-size: 25px;
-    box-shadow: 0 4px 0 #7d2121;
-    cursor: url('/assets/web/point.png'), pointer;
+@keyframes spin {
+    0%, 100% { transform: rotateY(0deg); }
+    50% { transform: rotateY(360deg); }
 }
 
-.closeButton:hover {
-    background-color: #da3b3b;
+.windowContent {
+    width: 100vw;
+    height:  100vh;
+
+    clip-path: circle(75% at center);
+    background-color: #e9b26b;
+    transition: 750ms;
 }
 
-.closeButton:active {
-    box-shadow: 0 -4px 0 #7d2121;
-    top: 10px;
-    cursor: url('/assets/web/click.png'), pointer;
-}
-
-.minimizeButton {
-    border: none;
-    background-color: #45aaff;
-    color: #ffeed5;
-    border-radius: 7px;
-    position: fixed;
-    right: 50px;
-    top: 7px;
-    width: 28px;
+.titleBar {
+    width: 100vw;
     height: 28px;
-    font-size: 15px;
-    box-shadow: 0 4px 0 #327dbb;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: row;
+
+    color: #ffeed5;
+    background-color: #101c31;
+}
+
+.tabsList {
+    position: fixed;
+    bottom: 0;
+
+    width: 100vw;
+    height: 35px;
+    
+    background-color: #101c31;
+}
+
+button {
+    border: none;
     cursor: url('/assets/web/point.png'), pointer;
 }
 
-.minimizeButton:hover {
-    background-color: #409ce8;
+button:active {
+    cursor: url('/assets/web/click.png'), pointer;
 }
 
-.minimizeButton:active {
-    box-shadow: 0 -4px 0 #286495;
-    top: 10px;
-    cursor: url('/assets/web/click.png'), pointer;
+button[type="closeWindow"] {
+    width: 32px;
+    height: 32px;
+    font-size: 25px;
+
+    border-radius: 7px;
+
+    color: #ffeed5;
+    background-color: #ff4545;
+    box-shadow: 0 4px 0 #cc3737;
+}
+
+button[type="closeWindow"]:active {
+    top: 4px;
+    position: relative;
+    background-color: #b32e2e;
+    box-shadow: 0 -4px 0 #cc3737;
+}
+
+button[type="minimizeWindow"] {
+    width: 32px;
+    height: 32px;
+    font-size: 25px;
+
+    border-radius: 7px;
+
+    color: #ffeed5;
+    background-color: #45aaff;
+    box-shadow: 0 4px 0 #3788cc;
+}
+
+button[type="minimizeWindow"]:active {
+    top: 4px;
+    position: relative;
+    background-color: #2e71b3;
+    box-shadow: 0 -4px 0 #3788cc;
+}
+
+button[type="tabButton"] {
+    width: 70px;
+    height: 35px;
+    font-size: 22px;
+    border-radius: 7px;
+    padding: 5px 13px 0 13px;
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+    color: #6a4420;
+    box-shadow: 0 4px 0 #6a4420;
+    transition: width 500ms;
+    
+    position: relative;
+}
+
+button[type="tabButton"]:hover {
+    width: var(--width);
+    color: #ffeed5;
+    background-color: #d5aa73;
+}
+
+button[type="tabButton"]:active {
+    width: var(--width);
+    color: #ffeed5;
+    background-color: #6a4420;
+    box-shadow: 0 -4px 0 #622810;
+    transform: translateY(4px);
+
+}
+
+button[type="tabButton"] img {
+    position: absolute;
+    left: 10px;
+    top: -20px;
+    pointer-events: none;
+    animation: spin 18s infinite linear; 
+}
+
+button[type="tabButton"] text {
+    opacity: 0;
+    position: relative;
+    right: -3px;
+    top: -4px;
+    
+    pointer-events: none;
+    transition: opacity 200ms;
+}
+
+button[type="tabButton"]:hover text {
+    opacity: 1;
+    transition-delay: 150ms;
+}
+
+button[type="tabButtonReverse"] {
+    width: 70px;
+    height: 35px;
+    font-size: 22px;
+    border-radius: 7px;
+    padding: 5px 13px 0 13px;
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+    color: #6a4420;
+    box-shadow: 0 4px 0 #6a4420;
+    transition: width 500ms;
+    
+    position: relative;
+}
+
+button[type="tabButtonReverse"]:hover {
+    width: var(--width);
+    color: #ffeed5;
+    background-color: #d5aa73;
+}
+
+button[type="tabButtonReverse"]:active {
+    width: var(--width);
+    color: #ffeed5;
+    background-color: #6a4420;
+    box-shadow: 0 -4px 0 #622810;
+    transform: translateY(4px);
+
+}
+
+button[type="tabButtonReverse"] img {
+    position: relative;
+    
+    right: -3px;
+    top: -13px;
+
+    pointer-events: none;
+    animation: spin 18s infinite linear; 
+}
+
+button[type="tabButtonReverse"] text {
+    opacity: 0;
+    position: absolute;
+    left: 7px;
+    top: 4px;
+    
+    pointer-events: none;
+    transition: opacity 200ms;
+}
+
+button[type="tabButtonReverse"]:hover text {
+    opacity: 1;
+    transition-delay: 150ms;
 }

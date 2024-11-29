@@ -8,78 +8,80 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <style>
-            .splashScreen {
-                position: fixed;
-                top: 0;
-                left: 0;
-
-                width: 100vw;
-                height: 100vh;
-                color: #ffeed5;
-                background-color: #101c31;
-
-                transition: 500ms;
-                z-index: 0;
-
-                pointer-events: none;
-            }
-
-            .titleBar {
-                display: flex;
-                flex-direction: row;
-
-                position: absolute;
-                top: 0;
-                left: 0;
-
-                width: 100vw;
-                height: 28px;
-                color: #ffeed5;
-                background-color: #101c31;
-
-                cursor: url('assets/web/fishing/cursor.png'), auto;
-            }
-        </style>
-
         <!-- Splash Screen -->
-        <div class="splashScreen">
-            <img src="assets/web/banner.png" width="650" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <img src="assets/web/banner.png" width="650" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
         
-            <div style="display: flex; flex-direction: row; position: fixed; left: 0; bottom: 0; height: 60px; width: calc(100vw - 20px); padding: 5px; font-size: 20px; margin: auto 10px 5px 10px;">
-                <div style="margin-left: 0; display: flex; gap: 5px;">
-                    <img src="assets/web/loading.png" height="35" style="margin: 11px auto; animation: loading 2s linear infinite;">
-                    <text style="margin: auto 0 11px 0;">Loading...</text>
-                </div>
+        <div style="display: flex; flex-direction: row; position: fixed; left: 0; bottom: 0; height: 60px; width: calc(100vw - 20px); padding: 5px; font-size: 20px; margin: auto 10px 5px 10px;">
+            <div style="margin-left: 0; display: flex; gap: 5px;">
+                <img src="assets/web/loading.png" height="35" style="margin: 11px auto; animation: loading 2s linear infinite;">
+                <text id="splashText" style="margin: auto 0 11px 0;">Loading...</text>
+            </div>
 
-                <div style="margin-left: auto; display: flex;">
-                    <text style="margin: auto 0 11px 0;">Powered by GDWeave</text>
-                    <img src="/assets/web/gdweave.png" height="50">
-                </div>
+            <div style="margin-left: auto; display: flex;">
+                <text style="margin: auto 0 11px 0;">Powered by GDWeave</text>
+                <img src="/assets/web/gdweave.png" height="50">
             </div>
         </div>
 
-        <!-- Title Bar -->
-        <div data-tauri-drag-region class="titleBar">
-            <img src="assets/rodnmod.ico" style="padding: 4px; image-rendering: auto;">
-
-            <text style="font-size: 18px; margin: 2px 0;">
-                Rod n' Mod
-            </text>
-        </div>
-        <div style="z-index: 1;">
-            <button class="minimizeButton" style="font-size: 22px;">
-                _
-            </button>
-    
-            <button class="closeButton" style="font-size: 30px;">
-                X
-            </button>
-        </div>
-
-        <!-- Window Content -->
+        <!-- Content -->
         <div class="windowContent">
+            <!-- Title Bar -->
+            <div data-tauri-drag-region class="titleBar">
+                <img src="assets/rodnmod.ico" height="28" style="padding: 4px; image-rendering: auto;"/>
+                <text style="margin: 3px 0; font-size: 18px;">Rod n' Mod</text>
 
+                <div style="margin-left: auto; padding: 5px;">
+                    <button type="minimizeWindow">
+                        _
+                    </button>
+
+                    <button type="closeWindow">
+                        X
+                    </button>
+                </div>
+            </div>
+
+            <div class="tabContent" style="height: 100%; padding: 28px 8% 35px 8%;">
+                
+            </div>
+
+            <!-- Tabs List -->
+            <div class="tabsList">
+                <div style="display: flex; flex-direction: row; gap: 5px; position: relative; width: 100%; height: 100%; top: -15px; padding: 0 5px;">
+                    <button type="tabButton" style="--width: 120px;">
+                        <text>Mods</text>
+                        <img src="assets/web/toolbox.png" height="50">
+                    </button>
+
+                    <button type="tabButton" style="--width: 150px;">
+                        <text>Modpacks</text>
+                        <img src="assets/web/backpack.png" height="50">
+                    </button>
+
+                    <button type="tabButton" style="--width: 175px;">
+                        <text>Save Manager</text>
+                        <img src="assets/web/saveman.png" height="50">
+                    </button>
+
+                    <button type="tabButton" style="--width: 135px;">
+                        <text>Settings</text>
+                        <img src="assets/web/settings.png" height="50">
+                    </button>
+
+                    <div style="display: flex; gap: 5px; margin-left: auto;">
+                        <button type="tabButtonReverse" style="--width: 175px;">
+                            <text>Launch Vanilla</text>
+                            <img src="assets/web/launch.png" height="50" style="margin-bottom: 5px;">
+                        </button>
+
+                        <button type="tabButtonReverse" style="--width: 175px;">
+                            <text>Launch Modded</text>
+                            <img src="assets/web/launch_modded.png" height="50" style="margin-bottom: 5px;">
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
+    <script src="scripts/defaultBehaviour.js"></script>
 </html>

@@ -16,3 +16,5 @@ window.addEventListener("DOMContentLoaded", () => {
     greet();
   });
 });
+
+console.log("hello from main.js")

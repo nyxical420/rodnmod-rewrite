@@ -41,8 +41,24 @@
                 </div>
             </div>
 
-            <div class="tabContent" style="height: 100%; padding: 28px 8% 35px 8%;">
-                
+            <div class="tab" style="background-color: #e9b26b; height: 100%; clip-path: circle(75% at center); transition: 1s;">
+                <div class="tabContent" style=" height: 100%; padding: 28px 5% 35px 5%;">
+                    <div id="Mods">
+                        mods tab
+                    </div>
+    
+                    <div id="Modpacks">
+                        modpack tab
+                    </div>
+    
+                    <div id="SaveManager">
+                        savemanager rab
+                    </div>
+    
+                    <div id="SecretMenu">
+                        secret tab
+                    </div>
+                </div>
             </div>
 
             <!-- Tabs List -->
@@ -69,12 +85,12 @@
                     </button>
 
                     <div style="display: flex; gap: 5px; margin-left: auto;">
-                        <button type="tabButtonReverse" style="--width: 175px;">
+                        <button type="tabButtonReverse" style="--width: 180px;">
                             <text>Launch Vanilla</text>
                             <img src="assets/web/launch.png" height="50" style="margin-bottom: 5px;">
                         </button>
 
-                        <button type="tabButtonReverse" style="--width: 175px;">
+                        <button type="tabButtonReverse" style="--width: 180px;">
                             <text>Launch Modded</text>
                             <img src="assets/web/launch_modded.png" height="50" style="margin-bottom: 5px;">
                         </button>
@@ -83,5 +99,17 @@
             </div>
         </div>
     </body>
+
+    <script>
+        // simulate buffered loading
+        setTimeout(() => {
+            openWindow()
+        }, 500);
+    </script>
+
+    <script src="main.js"></script>
+    <script src="scripts/dropdowns.js"></script>
+    <script src="scripts/uiScripts.js"></script>
+    <script src="scripts/soundEffects.js"></script>
     <script src="scripts/defaultBehaviour.js"></script>
 </html>

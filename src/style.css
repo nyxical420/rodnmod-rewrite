@@ -47,9 +47,10 @@ img {
     width: 100vw;
     height:  100vh;
 
-    clip-path: circle(75% at center);
-    background-color: #e9b26b;
-    transition: 750ms;
+    clip-path: circle(0% at center);
+    background-color: #101c31;
+    transition: 1s;
+    
 }
 
 .titleBar {
@@ -65,6 +66,8 @@ img {
 
     color: #ffeed5;
     background-color: #101c31;
+
+    z-index: 1;
 }
 
 .tabsList {
@@ -154,7 +157,10 @@ button[type="tabButton"]:active {
     background-color: #6a4420;
     box-shadow: 0 -4px 0 #622810;
     transform: translateY(4px);
+}
 
+button[type="tabButton"]:active text {
+    opacity: 1;
 }
 
 button[type="tabButton"] img {
@@ -210,7 +216,10 @@ button[type="tabButtonReverse"]:active {
     background-color: #6a4420;
     box-shadow: 0 -4px 0 #622810;
     transform: translateY(4px);
+}
 
+button[type="tabButtonReverse"]:active text {
+    opacity: 1;
 }
 
 button[type="tabButtonReverse"] img {
@@ -226,7 +235,7 @@ button[type="tabButtonReverse"] img {
 button[type="tabButtonReverse"] text {
     opacity: 0;
     position: absolute;
-    left: 7px;
+    left: 10px;
     top: 4px;
     
     pointer-events: none;

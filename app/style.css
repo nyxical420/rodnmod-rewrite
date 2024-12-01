@@ -1,6 +1,6 @@
 @font-face {
     font-family: "AccidentalPresidency";
-    src: url('./font.ttf');
+    src: url('assets/font.ttf');
 }
 
 * {
@@ -9,7 +9,7 @@
     user-select: none;
     box-sizing: border-box;
     font-family: "AccidentalPresidency", sans-serif;
-    cursor: url('../assets/web/fishing/cursor.png'), auto;
+    cursor: url('assets/web/fishing/cursor.png'), auto;
 }
 
 html, body {
@@ -78,6 +78,14 @@ img {
     height: 35px;
     
     background-color: #101c31;
+}
+
+.tab {
+    display: none;
+}
+
+.active {
+    display: block;
 }
 
 button {

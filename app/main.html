@@ -26,36 +26,50 @@
         <!-- Content -->
         <div class="windowContent">
             <!-- Title Bar -->
-            <div data-tauri-drag-region class="titleBar">
+            <div class="pywebview-drag-region titleBar">
                 <img src="assets/rodnmod.ico" height="28" style="padding: 4px; image-rendering: auto;"/>
                 <text style="margin: 3px 0; font-size: 18px;">Rod n' Mod</text>
+            </div>
+            <div style="position: fixed; top: 0; right: 0; padding: 5px; z-index: 1;">
+                <button id="minimizeButton" type="minimizeWindow">
+                    _
+                </button>
 
-                <div style="margin-left: auto; padding: 5px;">
-                    <button type="minimizeWindow">
-                        _
-                    </button>
-
-                    <button type="closeWindow">
-                        X
-                    </button>
-                </div>
+                <button id="closeButton" type="closeWindow">
+                    X
+                </button>
             </div>
 
-            <div class="tab" style="background-color: #e9b26b; height: 100%; clip-path: circle(75% at center); transition: 1s;">
-                <div class="tabContent" style=" height: 100%; padding: 28px 5% 35px 5%;">
-                    <div id="Mods">
+            <!-- Tab Contents -->
+            <div class="tabs" style="background-color: #e9b26b; height: 100%; clip-path: circle(75% at center); transition: 1s;">
+                <!-- Background Design -->
+                <div>
+                    <img src="assets/web/cog.png" width="128" style="position: fixed; bottom: -15px; right: -15px; animation: loading 10s linear infinite;">
+                    <img src="assets/web/cog.png" width="128" style="position: fixed; bottom: 95px; right: 10px; animation: loading 10s linear infinite reverse;">
+                    <img src="assets/web/cog.png" width="128" style="position: fixed; bottom: 115px; right: -100px; animation: loading 10s linear infinite;">
+                </div>
+
+                <!-- Settings -->
+                <div class="settingsContent" style="display: none; position: fixed; top: 0; left: 0; background-color: #00000080; color: #5a755a; width: 100%; height: 100%;">
+                    <div style="background-color: #ffeed5; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 630px; height: 700px; border-radius: 15px;">
+
+                    </div>
+                </div>
+                
+                <div class="tabContent" style="height: 100%; padding: 28px 5% 35px 5%;">
+                    <div class="tab active" id="Mods">
                         mods tab
                     </div>
     
-                    <div id="Modpacks">
+                    <div class="tab" id="Modpacks">
                         modpack tab
                     </div>
     
-                    <div id="SaveManager">
+                    <div class="tab" id="SaveManager">
                         savemanager rab
                     </div>
     
-                    <div id="SecretMenu">
+                    <div class="tab" id="SecretMenu">
                         secret tab
                     </div>
                 </div>
@@ -64,22 +78,22 @@
             <!-- Tabs List -->
             <div class="tabsList">
                 <div style="display: flex; flex-direction: row; gap: 5px; position: relative; width: 100%; height: 100%; top: -15px; padding: 0 5px;">
-                    <button type="tabButton" style="--width: 120px;">
+                    <button type="tabButton" style="--width: 120px;" onmouseup="changeScene('Mods')">
                         <text>Mods</text>
                         <img src="assets/web/toolbox.png" height="50">
                     </button>
 
-                    <button type="tabButton" style="--width: 150px;">
+                    <button type="tabButton" style="--width: 150px;" onmouseup="changeScene('Modpacks')">
                         <text>Modpacks</text>
                         <img src="assets/web/backpack.png" height="50">
                     </button>
 
-                    <button type="tabButton" style="--width: 175px;">
+                    <button type="tabButton" style="--width: 175px;" onmouseup="changeScene('SaveManager')">
                         <text>Save Manager</text>
                         <img src="assets/web/saveman.png" height="50">
                     </button>
 
-                    <button type="tabButton" style="--width: 135px;">
+                    <button type="tabButton" style="--width: 135px;" onmouseup="toggleSettings()">
                         <text>Settings</text>
                         <img src="assets/web/settings.png" height="50">
                     </button>
@@ -98,18 +112,29 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            window.addEventListener('pywebviewready', function() {
+                const splashText = document.getElementById("splashText")
+                document.getElementById("closeButton").addEventListener("click", () => {
+                    closeWindow()
+                    splashText.innerText = "Exiting Rod n' Mod..."
+                    sleep(3000).then(() => {
+                        window.pywebview.api.destroy()
+                    })
+                })
+
+                document.getElementById("minimizeButton").addEventListener("click", () => {
+                    window.pywebview.api.minimize()
+                })
+
+                openWindow();
+            })
+        </script>
+
+        <script src="scripts/uiScripts.js"></script>
+        <script src="scripts/soundPlayer.js"></script>
+        <script src="scripts/dropdownHandler.js"></script>
+        <script src="scripts/defaultBehaviour.js"></script>
     </body>
-
-    <script>
-        // simulate buffered loading
-        setTimeout(() => {
-            openWindow()
-        }, 500);
-    </script>
-
-    <script src="main.js"></script>
-    <script src="scripts/dropdowns.js"></script>
-    <script src="scripts/uiScripts.js"></script>
-    <script src="scripts/soundEffects.js"></script>
-    <script src="scripts/defaultBehaviour.js"></script>
 </html>
